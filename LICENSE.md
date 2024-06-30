@@ -1,4 +1,4 @@
-# Released under MIT License
+<!-- SPDX-License-Identifier: MIT -->
 
 Copyright © 2024 Altiran Systems Pvt. Ltd.
 
