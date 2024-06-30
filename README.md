@@ -23,6 +23,11 @@ just need a smile, Catsay has got you covered!
 - 🛠️ **Simple Command-Line Interface**: Lightweight and easy to use.
 - 🎨 **Customizable**: Modify the ASCII art or text formatting to your liking.
 
+## Screenshots
+
+![Catsay Linux Screenshot](https://raw.githubusercontent.com/Altiran/catsay/main/screenshots/linux.png)
+![Catsay Windows Screenshot](https://raw.githubusercontent.com/Altiran/catsay/main/screenshots/win.png)
+
 ## Download
 
 Download the latest release for your operating system from
