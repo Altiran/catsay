@@ -3,5 +3,4 @@ project(Catsay C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(catsay
-        src/catsay.c)
+add_executable(catsay src/catsay.c)

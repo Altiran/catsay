@@ -1,19 +1,18 @@
 /**
- * Catsay - a fun command-line tool that displays a customizable message alongside an adorable ASCII art cat.
  * Copyright © 2024 Altiran Systems Pvt. Ltd.
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the “Software”), to deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+ * Software.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 #include <stdio.h>
@@ -31,35 +30,35 @@ int main(int argc, char *argv[]) {
     unsigned long len = strlen(say);
 
     // Dynamically allocate memory for the arrays based on the length of the input string
-    char *buffer = calloc((len + 100) * 20, sizeof(char));
+    char *buffer = calloc((len + 100) * 100, sizeof(char));
     char *topLine = calloc((len + 100), sizeof(char));
     char *middleLine = calloc((len + 100), sizeof(char));
     char *spaces = calloc((len + 100), sizeof(char));
     char *bottomLine = calloc((len + 100), sizeof(char));
 
     // Prepare the top line
-    strcpy(topLine, " ");
-    for (int i = 0; i < len + 4; i++) {
-        strcat(topLine, "_");
+    topLine[0] = ' ';
+    for (int i = 1; i < len + 5; i++) {
+        topLine[i] = '_';
     }
-    sprintf(buffer + strlen(buffer), "%s\n", topLine);
+    strcat(buffer, topLine);
+    strcat(buffer, "\n");
 
     // Prepare the say
     sprintf(middleLine, "<  %s  >", say);
-    sprintf(buffer + strlen(buffer), "%s\n", middleLine);
+    strcat(buffer, middleLine);
+    strcat(buffer, "\n");
 
     unsigned long numSpaces = strlen(middleLine);
-    strcpy(spaces, "");
-    for (int i = 0; i < numSpaces; i++) {
-        strcat(spaces, " ");
-    }
+    memset(spaces, ' ', numSpaces);
 
     // Prepare the bottom line
-    strcpy(bottomLine, " ");
-    for (int i = 0; i < len + 4; i++) {
-        strcat(bottomLine, "-");
+    bottomLine[0] = ' ';
+    for (int i = 1; i < len + 5; i++) {
+        bottomLine[i] = '-';
     }
-    sprintf(buffer + strlen(buffer), "%s\n", bottomLine);
+    strcat(buffer, bottomLine);
+    strcat(buffer, "\n");
 
     // Prepare the cat
     sprintf(buffer + strlen(buffer),
