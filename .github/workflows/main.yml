@@ -29,6 +29,9 @@ jobs:
             -   name: Checkout code
                 uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
+            -   name: Create out directory
+                run: mkdir -p out
+
             -   name: Make
                 run: make
 
@@ -42,4 +45,4 @@ jobs:
                 uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
                 with:
                     name: Build Results (on ${{ matrix.os }})
-                    path: ${{ github.workspace }}
+                    path: ${{ github.workspace }}/out/
