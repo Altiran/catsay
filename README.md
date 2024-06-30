@@ -1,6 +1,8 @@
 # Catsay
 
-Welcome to **Catsay**! Inspired by the classic `cowsay`, Catsay is a fun and whimsical command-line tool that displays ASCII art of a cat along with a custom message. Whether you're looking to add a bit of feline flair to your terminal or just need a smile, Catsay has got you covered!
+Welcome to **Catsay**! Inspired by the classic `cowsay`, Catsay is a fun and whimsical command-line tool that displays
+ASCII art of a cat along with a custom message. Whether you're looking to add a bit of feline flair to your terminal or
+just need a smile, Catsay has got you covered!
 
 ## Features
 
