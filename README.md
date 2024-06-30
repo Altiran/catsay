@@ -78,7 +78,7 @@ $ ./catsay
 
 ## License
 
-This project is licensed under the MIT License.
+"Catsay" is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License).
 See the [LICENSE.md file](https://github.com/Altiran/catsay/blob/main/LICENSE.md) for details.
 
 ## Acknowledgments
@@ -87,4 +87,7 @@ See the [LICENSE.md file](https://github.com/Altiran/catsay/blob/main/LICENSE.md
 2. Idea for Catsay inspired by [Cequal's Catsay](https://github.com/Cequallium/Catsay). Check out his project for more cat-related fun!
 3. ASCII cat art taken from [ASCII Art Archive](https://www.asciiart.eu/animals/cats).
 
-<!-- MADE WITH LOVE BY @Altiran -->
+---
+<h4 align="center">💻🐈</h4>
+
+<!-- MADE WITH ❤️ BY ALTIRAN -->
