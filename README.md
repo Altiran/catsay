@@ -27,7 +27,7 @@ just need a smile, Catsay has got you covered!
 Download the latest release for your operating system from
 the [GitHub Releases page](https://github.com/Altiran/catsay/releases).
 
-OR
+**OR**
 
 Clone the repository and build the project yourself.
 You can use CMake in your IDE or compile using GCC via the following command:
