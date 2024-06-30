@@ -4,6 +4,7 @@ Welcome to **Catsay**! Inspired by the classic `cowsay`, Catsay is a fun and whi
 ASCII art of a cat along with a custom message. Whether you're looking to add a bit of feline flair to your terminal or
 just need a smile, Catsay has got you covered!
 
+[ ![Build Status](https://github.com/Altiran/catsay/actions/workflows/main.yml/badge.svg "Build Status")](https://github.com/Altiran/catsay)
 [ ![Discord](https://canary.discordapp.com/api/guilds/729950513352933386/widget.png) ](https://discord.gg/jsSGFeR)
 [ ![Latest Release](https://img.shields.io/badge/Latest%20Release-v1.0.0-orange)](https://github.com/Altiran/catsay/releases/tag/v1.0.0)
 [ ![GitHub Forks](https://img.shields.io/github/forks/Altiran/catsay.svg)](https://github.com/Altiran/catsay/fork)
