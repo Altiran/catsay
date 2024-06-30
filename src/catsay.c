@@ -19,56 +19,52 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define BUFFER_SIZE 100
+#define EXTRA_SPACE 100
+
 int main(int argc, char *argv[]) {
-    // Define a default string
     char *defaultSay = "Meow!";
-
-    // Use the default string if no say is provided
     char *say = argc > 1 ? argv[1] : defaultSay;
-
-    // Get the length of the string
     unsigned long len = strlen(say);
 
-    // Dynamically allocate memory for the arrays based on the length of the input string
-    char *buffer = calloc((len + 100) * 100, sizeof(char));
-    char *topLine = calloc((len + 100), sizeof(char));
-    char *middleLine = calloc((len + 100), sizeof(char));
-    char *spaces = calloc((len + 100), sizeof(char));
-    char *bottomLine = calloc((len + 100), sizeof(char));
+    char *buffer = calloc((len + EXTRA_SPACE) * BUFFER_SIZE, sizeof(char));
+    char *topLine = calloc((len + EXTRA_SPACE), sizeof(char));
+    char *middleLine = calloc((len + EXTRA_SPACE), sizeof(char));
+    char *spaces = calloc((len + EXTRA_SPACE), sizeof(char));
+    char *bottomLine = calloc((len + EXTRA_SPACE), sizeof(char));
 
-    // Prepare the top line
+    if (!buffer || !topLine || !middleLine || !spaces || !bottomLine) {
+        puts("Memory allocation failed.");
+        return 1;
+    }
+
     topLine[0] = ' ';
     for (int i = 1; i < len + 5; i++) {
         topLine[i] = '_';
     }
-    strcat(buffer, topLine);
-    strcat(buffer, "\n");
+    strncat(buffer, topLine, (len + EXTRA_SPACE) * BUFFER_SIZE);
+    strncat(buffer, "\n", (len + EXTRA_SPACE) * BUFFER_SIZE);
 
-    // Prepare the say
     sprintf(middleLine, "<  %s  >", say);
-    strcat(buffer, middleLine);
-    strcat(buffer, "\n");
+    strncat(buffer, middleLine, (len + EXTRA_SPACE) * BUFFER_SIZE);
+    strncat(buffer, "\n", (len + EXTRA_SPACE) * BUFFER_SIZE);
 
     unsigned long numSpaces = strlen(middleLine);
     memset(spaces, ' ', numSpaces);
 
-    // Prepare the bottom line
     bottomLine[0] = ' ';
     for (int i = 1; i < len + 5; i++) {
         bottomLine[i] = '-';
     }
-    strcat(buffer, bottomLine);
-    strcat(buffer, "\n");
+    strncat(buffer, bottomLine, (len + EXTRA_SPACE) * BUFFER_SIZE);
+    strncat(buffer, "\n", (len + EXTRA_SPACE) * BUFFER_SIZE);
 
-    // Prepare the cat
     sprintf(buffer + strlen(buffer),
             "%s\\\n%s \\\n%s  \\  ,_     _\n%s     |\\\\_,-~/\n%s     / _  _ |    ,--.\n%s    (  @  @ )   / ,-'\n%s     \\  _T_/-._( (\n%s     /         `. \\\n%s    |         _  \\ |\n%s     \\ \\ ,  /      |\n%s      || |-_\\__   /\n%s     ((_/`(____,-'\n",
             spaces, spaces, spaces, spaces, spaces, spaces, spaces, spaces, spaces, spaces, spaces, spaces);
 
-    // Print the entire buffer
-    printf("%s", buffer);
+    puts(buffer);
 
-    // Free the allocated memory
     free(buffer);
     free(topLine);
     free(middleLine);
